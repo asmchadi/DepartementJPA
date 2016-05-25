@@ -18,6 +18,7 @@ public class ProjetFinEtude extends Common{
 	// TODO
 	private List<Object> participants; 
 	private List<Enseignant> encadrants;
+	private Integer nbHeureEncadre;
 	
 	public ProjetFinEtude() {
 		super();

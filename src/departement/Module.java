@@ -16,7 +16,7 @@ public class Module extends Common {
 	private Integer vhTP;
 	private Integer vhTD;
 	private Filiere filliere;
-	private Enseignant responssable;
+	private Enseignant responsable;
 	
 	public Module() {
 		super();
@@ -63,11 +63,11 @@ public class Module extends Common {
 	}
 
 	public Enseignant getResponssable() {
-		return responssable;
+		return responsable;
 	}
 
 	public void setResponssable(Enseignant responssable) {
-		this.responssable = responssable;
+		this.responsable = responssable;
 	}
 
 }
