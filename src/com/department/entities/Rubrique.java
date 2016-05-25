@@ -1,7 +1,8 @@
-package departement;
+package com.department.entities;
 
-import departement.Common;
 import javax.persistence.*;
+
+import com.department.entities.Common;
 
 /**
  * Entity implementation class for Entity: Rubrique

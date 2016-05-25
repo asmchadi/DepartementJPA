@@ -1,10 +1,10 @@
-package departement;
-
-import departement.Common;
+package com.department.entities;
 
 import java.util.List;
 
 import javax.persistence.*;
+
+import com.department.entities.Common;
 
 /**
  * Entity implementation class for Entity: ProjetFinEtude

@@ -1,10 +1,18 @@
 package com.department.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import com.department.utils.Common;
-
+/**
+ * Entity implementation class for Entity: Cycle
+ *
+ */
 @Entity
-public class Cycle extends Common{
+@Table(name="cycle")
+public class Cycle extends Common {
+
+	public Cycle() {
+		super();
+	}
 
 }
