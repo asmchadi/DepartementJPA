@@ -20,6 +20,14 @@ public class ProjetFinEtude extends Common{
 	private List<Enseignant> encadrants;
 	private Integer nbHeureEncadre;
 	
+	public Integer getNbHeureEncadre() {
+		return nbHeureEncadre;
+	}
+
+	public void setNbHeureEncadre(Integer nbHeureEncadre) {
+		this.nbHeureEncadre = nbHeureEncadre;
+	}
+
 	public ProjetFinEtude() {
 		super();
 	}

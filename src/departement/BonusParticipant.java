@@ -18,4 +18,45 @@ public class BonusParticipant {
 		
 	}
 
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public Bonus getBonus() {
+		return bonus;
+	}
+
+
+	public void setBonus(Bonus bonus) {
+		this.bonus = bonus;
+	}
+
+
+	public List<Enseignant> getParticipants() {
+		return participants;
+	}
+
+
+	public void setParticipants(List<Enseignant> participants) {
+		this.participants = participants;
+	}
+
+
+	public String getAnneeUniversitaire() {
+		return anneeUniversitaire;
+	}
+
+
+	public void setAnneeUniversitaire(String anneeUniversitaire) {
+		this.anneeUniversitaire = anneeUniversitaire;
+	}
+	
+
 }
