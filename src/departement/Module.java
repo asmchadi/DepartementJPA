@@ -62,11 +62,11 @@ public class Module extends Common {
 		this.filliere = filliere;
 	}
 
-	public Enseignant getResponssable() {
+	public Enseignant getResponsable() {
 		return responsable;
 	}
 
-	public void setResponssable(Enseignant responssable) {
+	public void setResponsable(Enseignant responssable) {
 		this.responsable = responssable;
 	}
 
