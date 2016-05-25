@@ -1,4 +1,4 @@
-package departement.entities;
+package departement;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
