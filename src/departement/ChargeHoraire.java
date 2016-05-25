@@ -12,6 +12,7 @@ public class ChargeHoraire {
 	private Integer vhModule;
 	private Integer vhPFE;
 	private Integer vhBonus;
+	private Boolean isValid = false;
 	
 	public ChargeHoraire() {
 	
@@ -63,6 +64,14 @@ public class ChargeHoraire {
 
 	public void setVhBonus(Integer vhBonus) {
 		this.vhBonus = vhBonus;
+	}
+
+	public Boolean getIsValid() {
+		return isValid;
+	}
+
+	public void setIsValide(Boolean isValide) {
+		this.isValid = isValide;
 	}
 	
 
