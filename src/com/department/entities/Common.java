@@ -1,4 +1,4 @@
-package departement;
+package com.department.entities;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;

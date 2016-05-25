@@ -1,4 +1,4 @@
-package departement;
+package com.department.entities;
 
 public class Semestre {
 
