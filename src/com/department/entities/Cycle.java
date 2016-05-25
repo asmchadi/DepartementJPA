@@ -1,5 +1,6 @@
 package com.department.entities;
 
+import com.department.utils.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 

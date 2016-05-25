@@ -1,8 +1,9 @@
 package com.department.entities;
 
+
+import com.department.utils.*;
 import javax.persistence.*;
 
-import com.department.entities.Common;
 
 /**
  * Entity implementation class for Entity: Formation

@@ -1,6 +1,11 @@
 package com.department.entities;
 
-public class Filiere {
+import com.department.utils.*;
+import javax.persistence.*;
+
+
+@Entity
+public class Filiere extends Common {
 
 	public Filiere() {
 		// TODO Auto-generated constructor stub
