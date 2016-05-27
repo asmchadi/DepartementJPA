@@ -17,7 +17,7 @@ public class _TableNames {
 		Pv = PREFIX + "pvs", 
 		Pv_Validators  = PREFIX + "pvs_validators",
 		ChargeHoraire   = PREFIX + "charge_horaires", 
-		Bonus_Participant   = PREFIX + "bonus_participants",
+		BonusParticipant   = PREFIX + "bonus_participants",
 		Bonus  = PREFIX + "bonus", 
 		ProjetFinEtude    = PREFIX + "projet_fin_etudes",
 		Rubrique   = PREFIX + "rubriques";
