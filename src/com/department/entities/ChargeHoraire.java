@@ -2,11 +2,15 @@ package com.department.entities;
 
 import javax.persistence.*;
 
+import com.department.utils._TableNames;
+
 @Entity
+@Table(name = _TableNames.ChargeHoraire)
 public class ChargeHoraire {
 	
 	@Id
 	private Long id;
+	@ManyToOne
 	private Enseignant enseignant;
 	private String anneeUniversitaire;
 	private Integer vhModule;
@@ -15,9 +19,10 @@ public class ChargeHoraire {
 	private Boolean isValid = false;
 	
 	public ChargeHoraire() {
-	
 	}
 
+	
+	
 	public Long getId() {
 		return id;
 	}

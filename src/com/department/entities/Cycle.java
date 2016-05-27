@@ -1,19 +1,22 @@
 package com.department.entities;
 
-import com.department.utils.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- * Entity implementation class for Entity: Cycle
- *
- */
+import com.department.utils.Common;
+import com.department.utils._TableNames;
+
 @Entity
-@Table(name="cycle")
-public class Cycle extends Common {
+@Table(name = _TableNames.Cycle)
+public class Cycle extends Common{
 
 	public Cycle() {
 		super();
-	}
+		// TODO Auto-generated constructor stub
+	} 
 
+	public Cycle(Long id, String intitule) {
+		super(id, intitule);
+		// TODO Auto-generated constructor stub
+	}
 }

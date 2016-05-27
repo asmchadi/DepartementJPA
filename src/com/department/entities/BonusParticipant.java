@@ -2,30 +2,46 @@ package com.department.entities;
 
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.department.utils.Common;
+import com.department.utils._TableNames;
 
 @Entity
-public class BonusParticipant {
+@Table(name = _TableNames.BonusParticipant)
+public class BonusParticipant extends Common {
 	
-	@Id	
-	private Integer id;
+	@ManyToOne
 	private Bonus bonus;
+	@OneToMany
 	private List<Enseignant> participants;
 	private String anneeUniversitaire;
+	private Integer volumeHoraire;
 	
-	
+	public BonusParticipant(Long id, String intitule, Bonus bonus,
+			String anneeUniversitaire, Integer volumeHoraire) {
+		super(id, intitule);
+		this.bonus = bonus;
+		this.anneeUniversitaire = anneeUniversitaire;
+		this.volumeHoraire = volumeHoraire;
+	}
+
 	public BonusParticipant() {
-		
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 
-	public Integer getId() {
-		return id;
+	public Integer getVolumeHoraire() {
+		return volumeHoraire;
 	}
 
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setVolumeHoraire(Integer volumeHoraire) {
+		this.volumeHoraire = volumeHoraire;
 	}
 
 
