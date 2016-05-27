@@ -13,6 +13,7 @@ public class DemandeAttestation extends CommonWithFile {
 
 	@ManyToOne
 	private Enseignant enseignant;
+	@ManyToOne
 	private TypeAttestation type_attestation;
 	private Boolean isPrepared = false;
 

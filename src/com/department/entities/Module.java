@@ -1,34 +1,53 @@
 package com.department.entities;
 
-
 import com.department.utils.*;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
  * Entity implementation class for Entity: Module
- *
+ * 
  */
 @Entity
-@Table(name="module")
+@Table(name = _TableNames.Module)
 public class Module extends Common {
 
-	private Semestre semestre;
 	private Integer vhCour;
 	private Integer vhTP;
 	private Integer vhTD;
+	private Integer semestre;
+	@ManyToOne
 	private Filiere filliere;
+	@ManyToOne
 	private Enseignant responsable;
-	
+
 	public Module() {
 		super();
 	}
+	
+	
 
-	public Semestre getSemestre() {
+	public Module(Long id, String intitule, Filiere filliere,
+			Enseignant responsable, Integer semestre, Integer vhCour,
+			Integer vhTP, Integer vhTD) {
+		super(id, intitule);
+		this.filliere = filliere;
+		this.responsable = responsable;
+		this.semestre = semestre;
+		this.vhCour = vhCour;
+		this.vhTP = vhTP;
+		this.vhTD = vhTD;
+	}
+
+
+
+	public Integer getInteger() {
 		return semestre;
 	}
 
-	public void setSemestre(Semestre semestre) {
+	public void setInteger(Integer semestre) {
 		this.semestre = semestre;
 	}
 

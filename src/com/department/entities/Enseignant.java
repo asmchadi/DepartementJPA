@@ -1,6 +1,11 @@
 package com.department.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+import com.department.utils._TableNames;
 
 /**
  * Entity implementation class for Entity: Enseignant
@@ -8,6 +13,7 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name = _TableNames.Enseignant)
 public class Enseignant {
 
 	@Id
@@ -15,6 +21,7 @@ public class Enseignant {
 	private String nom;
 	private String prenom;
 	private String email;
+	private String login;
 	private String password;
 	private Boolean isChefDepartement;
 	private Boolean isValid;
@@ -23,8 +30,28 @@ public class Enseignant {
 	private String cvName;
 	private String cvContentType;
 	
+	
 	public Enseignant() {
 		super();
+	}
+
+	/*
+	 * creation d'un compte par default
+	 */
+	public Enseignant(String nom, String prenom) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.login = nom.toLowerCase() + "@edep";
+		this.password = nom.toLowerCase();
+	}
+
+	public Enseignant(String nom, String prenom, String login, String password) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.login = login;
+		this.password = password;
 	}
 
 	public Long getId() {
@@ -33,6 +60,14 @@ public class Enseignant {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getNom() {
