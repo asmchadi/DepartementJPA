@@ -1,5 +1,7 @@
 package com.department.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.department.utils._TableNames;
@@ -13,6 +15,8 @@ public class ChargeHoraire {
 	@ManyToOne
 	private Enseignant enseignant;
 	private String anneeUniversitaire;
+	@OneToMany(mappedBy = "chargeHoraire")
+	private List<ChargeModule> modules;
 	private Integer vhModule;
 	private Integer vhPFE;
 	private Integer vhBonus;
@@ -23,6 +27,24 @@ public class ChargeHoraire {
 
 	
 	
+	public List<ChargeModule> getModules() {
+		return modules;
+	}
+
+
+
+	public void setModules(List<ChargeModule> modules) {
+		this.modules = modules;
+	}
+
+
+
+	public void setIsValid(Boolean isValid) {
+		this.isValid = isValid;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}
