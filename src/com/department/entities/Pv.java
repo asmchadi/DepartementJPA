@@ -2,7 +2,9 @@ package com.department.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.department.utils.CommonWithFile;
@@ -12,6 +14,8 @@ import com.department.utils._TableNames;
 @Table(name = _TableNames.Pv)
 public class Pv extends CommonWithFile{
 
+	@Lob
+	@Column
 	private String text;
 	private Date date;
 	private Boolean isValide=false;
