@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import com.department.utils.ProfileRole;
 import com.department.utils.Status;
 import com.department.utils._TableNames;
 
@@ -29,7 +28,7 @@ public class Enseignant {
 	private String login;
 	private String password;
 	private String role;
-	private Status status;
+	private Status isValide;
 	@Lob
 	private Byte[] cvData;
 	private String cvName;
@@ -113,12 +112,13 @@ public class Enseignant {
 		this.role = role;
 	}
 
-	public Status getStatus() {
-		return status;
+
+	public Status getIsValide() {
+		return isValide;
 	}
 
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setIsValide(Status isValide) {
+		this.isValide = isValide;
 	}
 
 	public Byte[] getCvData() {

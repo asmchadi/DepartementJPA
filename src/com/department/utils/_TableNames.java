@@ -4,6 +4,7 @@ public class _TableNames {
 
 	private static final String PREFIX = "edep_";
 	public static final String 
+		AnneeUniversitaire = PREFIX + "annee_universitaire",
 		Enseignant = PREFIX + "enseignants",
 		Filiere  = PREFIX + "filieres", 
 		Module  = PREFIX + "modules",
