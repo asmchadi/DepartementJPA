@@ -22,8 +22,7 @@ public class ChargeModule {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
-	@ManyToOne(fetch = FetchType.LAZY)
-	private ChargeHoraire chargeHoraire;
+	
 	@ManyToOne
 	private Module module;
 	private Integer vhCour;
@@ -35,6 +34,8 @@ public class ChargeModule {
 	private Status status;
 	private String message;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ChargeHoraire chargeHoraire;
 	public ChargeModule() {
 		super();
 	}

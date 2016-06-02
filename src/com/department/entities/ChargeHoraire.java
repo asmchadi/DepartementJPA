@@ -15,16 +15,17 @@ public class ChargeHoraire {
 	private Long id;
 	@ManyToOne
 	private Enseignant enseignant;
-	@OneToMany(mappedBy = "chargeHoraire")
-	private List<ChargeModule> modules;
-	@OneToMany(mappedBy = "chargeHoraire")
-	private List<BonusParticipant> bonus;
 	@ManyToOne
 	private AnneeUniversitaire anneeUniversitaire;
 	private Integer vhModule;
 	private Integer vhBonus;
 	private Status status;
+
+	@OneToMany(mappedBy = "chargeHoraire")
+	private List<ChargeModule> modules;
 	
+	@OneToMany(mappedBy = "chargeHoraire")
+	private List<BonusParticipant> bonus;
 	public ChargeHoraire() {
 	}
 	
