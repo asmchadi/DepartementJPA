@@ -1,7 +1,10 @@
 package com.department.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
+import com.department.utils.Status;
 import com.department.utils._TableNames;
 
 @Entity
@@ -12,17 +15,47 @@ public class ChargeHoraire {
 	private Long id;
 	@ManyToOne
 	private Enseignant enseignant;
-	private String anneeUniversitaire;
+	@OneToMany(mappedBy = "chargeHoraire")
+	private List<ChargeModule> modules;
+	@OneToMany(mappedBy = "chargeHoraire")
+	private List<BonusParticipant> bonus;
+	@ManyToOne
+	private AnneeUniversitaire anneeUniversitaire;
 	private Integer vhModule;
-	private Integer vhPFE;
 	private Integer vhBonus;
-	private Boolean isValid = false;
+	private Status status;
 	
 	public ChargeHoraire() {
 	}
+	
+	public List<ChargeModule> getModules() {
+		return modules;
+	}
 
-	
-	
+	public ChargeHoraire(Enseignant enseignant, List<ChargeModule> modules,
+			Integer vhModule, Integer vhBonus, Status status,
+			String anneeUniversitaire) {
+		super();
+		this.enseignant = enseignant;
+		this.modules = modules;
+		this.vhModule = vhModule;
+		this.vhBonus = vhBonus;
+		this.status = status;
+		this.anneeUniversitaire = new AnneeUniversitaire(anneeUniversitaire);
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public void setModules(List<ChargeModule> modules) {
+		this.modules = modules;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -40,11 +73,11 @@ public class ChargeHoraire {
 	}
 
 	public String getAnneeUniversitaire() {
-		return anneeUniversitaire;
+		return anneeUniversitaire.getIntitule();
 	}
 
 	public void setAnneeUniversitaire(String anneeUniversitaire) {
-		this.anneeUniversitaire = anneeUniversitaire;
+		this.anneeUniversitaire = new AnneeUniversitaire(anneeUniversitaire);
 	}
 
 	public Integer getVhModule() {
@@ -55,14 +88,6 @@ public class ChargeHoraire {
 		this.vhModule = vhModule;
 	}
 
-	public Integer getVhPFE() {
-		return vhPFE;
-	}
-
-	public void setVhPFE(Integer vhPFE) {
-		this.vhPFE = vhPFE;
-	}
-
 	public Integer getVhBonus() {
 		return vhBonus;
 	}
@@ -71,13 +96,11 @@ public class ChargeHoraire {
 		this.vhBonus = vhBonus;
 	}
 
-	public Boolean getIsValid() {
-		return isValid;
+	public List<BonusParticipant> getBonus() {
+		return bonus;
 	}
 
-	public void setIsValide(Boolean isValide) {
-		this.isValid = isValide;
+	public void setBonus(List<BonusParticipant> bonus) {
+		this.bonus = bonus;
 	}
-	
-
 }
