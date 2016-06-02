@@ -1,10 +1,14 @@
 package com.department.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+import com.department.utils.ProfileRole;
+import com.department.utils.Status;
 import com.department.utils._TableNames;
 
 /**
@@ -17,27 +21,24 @@ import com.department.utils._TableNames;
 public class Enseignant {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nom;
 	private String prenom;
 	private String email;
 	private String login;
 	private String password;
-	private Boolean isChefDepartement;
-	private Boolean isValid;
+	private String role;
+	private Status status;
 	@Lob
 	private Byte[] cvData;
 	private String cvName;
 	private String cvContentType;
 	
-	
 	public Enseignant() {
 		super();
 	}
 
-	/*
-	 * creation d'un compte par default
-	 */
 	public Enseignant(String nom, String prenom) {
 		super();
 		this.nom = nom;
@@ -46,12 +47,13 @@ public class Enseignant {
 		this.password = nom.toLowerCase();
 	}
 
-	public Enseignant(String nom, String prenom, String login, String password) {
+	public Enseignant(String nom, String prenom, String login, String password, String role) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.login = login;
 		this.password = password;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -100,22 +102,23 @@ public class Enseignant {
 
 	public void setPassword(String password) {
 		this.password = password;
+	} 
+
+
+	public String getRole() {
+		return role;
 	}
 
-	public Boolean getIsChefDepartement() {
-		return isChefDepartement;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
-	public void setIsChefDepartement(Boolean isChefDepartement) {
-		this.isChefDepartement = isChefDepartement;
+	public Status getStatus() {
+		return status;
 	}
 
-	public Boolean getIsValid() {
-		return isValid;
-	}
-
-	public void setIsValid(Boolean isValid) {
-		this.isValid = isValid;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	public Byte[] getCvData() {
