@@ -1,5 +1,7 @@
 package com.department.entities;
 
+import java.util.Locale;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -53,6 +55,11 @@ public class Enseignant {
 		this.login = login;
 		this.password = password;
 		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return nom.toUpperCase() + " " + prenom.toLowerCase(Locale.FRANCE);
 	}
 
 	public Long getId() {
