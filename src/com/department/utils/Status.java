@@ -4,5 +4,6 @@ public enum Status {
 VALID,
 NONVALID,
 PENDING,
-REGECTED
+REGECTED,
+MODIFIED
 }

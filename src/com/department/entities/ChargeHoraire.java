@@ -3,6 +3,7 @@ package com.department.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -20,14 +21,14 @@ public class ChargeHoraire {
 	@ManyToOne
 	private Enseignant enseignant;
 	private String anneeUniversitaire;
-	private Integer vhModule;
-	private Integer vhBonus;
+	private Double vhModule;
+	private Double vhBonus;
 	private Status status;
 
-	@OneToMany(mappedBy = "chargeHoraire")
+	@OneToMany(mappedBy = "chargeHoraire",fetch = FetchType.EAGER)
 	private List<ChargeModule> modules;
 	
-	@OneToMany(mappedBy = "chargeHoraire")
+	@OneToMany(mappedBy = "chargeHoraire",fetch = FetchType.EAGER)
 	private List<BonusParticipant> bonus;
 	public ChargeHoraire() {
 	}
@@ -37,7 +38,7 @@ public class ChargeHoraire {
 	}
 
 	public ChargeHoraire(Enseignant enseignant, List<ChargeModule> modules,
-			Integer vhModule, Integer vhBonus, Status status,
+			Double vhModule, Double vhBonus, Status status,
 			String anneeUniversitaire) {
 		super();
 		this.enseignant = enseignant;
@@ -84,19 +85,19 @@ public class ChargeHoraire {
 		this.anneeUniversitaire = anneeUniversitaire;
 	}
 
-	public Integer getVhModule() {
+	public Double getVhModule() {
 		return vhModule;
 	}
 
-	public void setVhModule(Integer vhModule) {
+	public void setVhModule(Double vhModule) {
 		this.vhModule = vhModule;
 	}
 
-	public Integer getVhBonus() {
+	public Double getVhBonus() {
 		return vhBonus;
 	}
 
-	public void setVhBonus(Integer vhBonus) {
+	public void setVhBonus(Double vhBonus) {
 		this.vhBonus = vhBonus;
 	}
 
