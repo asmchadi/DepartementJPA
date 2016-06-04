@@ -2,7 +2,11 @@ package com.department.entities;
 
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.department.utils.Status;
 import com.department.utils._TableNames;
@@ -15,8 +19,7 @@ public class ChargeHoraire {
 	private Long id;
 	@ManyToOne
 	private Enseignant enseignant;
-	@ManyToOne
-	private AnneeUniversitaire anneeUniversitaire;
+	private String anneeUniversitaire;
 	private Integer vhModule;
 	private Integer vhBonus;
 	private Status status;
@@ -42,7 +45,7 @@ public class ChargeHoraire {
 		this.vhModule = vhModule;
 		this.vhBonus = vhBonus;
 		this.status = status;
-		this.anneeUniversitaire = new AnneeUniversitaire(anneeUniversitaire);
+		this.anneeUniversitaire = anneeUniversitaire;
 	}
 
 	public Status getStatus() {
@@ -73,12 +76,12 @@ public class ChargeHoraire {
 		this.enseignant = enseignant;
 	}
 
-	public String getAnneeUniversitaire() {
-		return anneeUniversitaire.getIntitule();
+	public String getString() {
+		return anneeUniversitaire;
 	}
 
-	public void setAnneeUniversitaire(String anneeUniversitaire) {
-		this.anneeUniversitaire = new AnneeUniversitaire(anneeUniversitaire);
+	public void setString(String anneeUniversitaire) {
+		this.anneeUniversitaire = anneeUniversitaire;
 	}
 
 	public Integer getVhModule() {
