@@ -9,6 +9,7 @@ public class _TableNames {
 		Filiere  = PREFIX + "filieres", 
 		Module  = PREFIX + "modules",
 		Cours  = PREFIX + "cours",
+		ChargeModule  = PREFIX + "charge_modules",
 		Cycle   = PREFIX + "cycles",
 		Formation    = PREFIX + "formations", 
 		EmploiDeTemps  = PREFIX + "emploi_de_temps", 

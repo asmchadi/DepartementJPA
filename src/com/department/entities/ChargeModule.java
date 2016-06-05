@@ -16,7 +16,7 @@ import com.department.utils._TableNames;
  * 
  */
 @Entity
-@Table(name = _TableNames.ChargeHoraire+_TableNames.Module)
+@Table(name = _TableNames.ChargeModule)
 public class ChargeModule {
 
 	@Id
@@ -29,7 +29,7 @@ public class ChargeModule {
 	private Integer nbCour;
 	private Integer vhTP;
 	private Integer nbTP;
-	private Integer vhTD; 
+	private Integer vhTD;
 	private Integer nbTD;
 	private Status status;
 	private String message;
