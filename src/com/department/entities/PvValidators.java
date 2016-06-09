@@ -2,21 +2,26 @@ package com.department.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.department.utils.CommonWithFile;
+import com.department.utils.Common;
 import com.department.utils._TableNames;
 
 @Entity
 @Table(name = _TableNames.Pv_Validators)
-public class PvValidators extends CommonWithFile {
+public class PvValidators extends Common {
+	private Date date;
 	@ManyToOne
 	private Pv pv;
 	@ManyToOne
 	private Enseignant enseignant;
-	private Date date;
+	@Lob
+	@Column
+	private String content;
 
 	public PvValidators() {
 		super();
@@ -34,7 +39,7 @@ public class PvValidators extends CommonWithFile {
 	public PvValidators(Long id, String intitule, String file_contentType,
 			Pv pv, Enseignant enseignant, Date date, byte[] file_data,
 			String file_name) {
-		super(id, intitule, file_data, file_name, file_contentType);
+		super(id, intitule);
 		this.pv = pv;
 		this.enseignant = enseignant;
 		this.date = date;
@@ -63,4 +68,18 @@ public class PvValidators extends CommonWithFile {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	@Override
+	public String toString() {
+		return "PvValidators [date=" + date + ", pv=" + pv + ", enseignant=" + enseignant + ", content=" + content
+				+ ", id=" + id + ", intitule=" + intitule + "]";
+	}	
 }

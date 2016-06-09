@@ -18,6 +18,11 @@ public abstract class Common {
 		this.id = id;
 		this.intitule = intitule;
 	}
+	public Common(String intitule) {
+		super();
+		this.intitule = intitule;
+	}
+	
 	
 	public Common() {
 		super();

@@ -2,7 +2,8 @@ package com.department.utils;
 
 public enum Status {
 VALID,
-NONVALID,
+NOVALID,
 PENDING,
-REGECTED
+REGECTED,
+MODIFIED
 }
