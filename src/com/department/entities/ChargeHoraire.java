@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -17,6 +19,7 @@ import com.department.utils._TableNames;
 public class ChargeHoraire {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
 	private Enseignant enseignant;
@@ -108,4 +111,13 @@ public class ChargeHoraire {
 	public void setBonus(List<BonusParticipant> bonus) {
 		this.bonus = bonus;
 	}
+
+	public String getAnneeUniversitaire() {
+		return anneeUniversitaire;
+	}
+
+	public void setAnneeUniversitaire(String anneeUniversitaire) {
+		this.anneeUniversitaire = anneeUniversitaire;
+	}
+	
 }

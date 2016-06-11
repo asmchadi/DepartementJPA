@@ -22,8 +22,8 @@ import com.department.utils._TableNames;
 public class Enseignant {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	protected Long id;
 	private String nom;
 	private String prenom;
 	private String email;
@@ -32,10 +32,15 @@ public class Enseignant {
 	private String role;
 	private Status isValide;
 	@Lob
-	private Byte[] cvData;
+	private byte[] cvData;
 	private String cvName;
 	private String cvContentType;
-	
+
+	@Lob
+	private byte[] photoData;
+	private String photoName;
+	private String photoContentType;
+
 	public Enseignant() {
 		super();
 	}
@@ -48,7 +53,8 @@ public class Enseignant {
 		this.password = nom.toLowerCase();
 	}
 
-	public Enseignant(String nom, String prenom, String login, String password, String role) {
+	public Enseignant(String nom, String prenom, String login, String password,
+			String role) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -108,8 +114,7 @@ public class Enseignant {
 
 	public void setPassword(String password) {
 		this.password = password;
-	} 
-
+	}
 
 	public String getRole() {
 		return role;
@@ -119,7 +124,6 @@ public class Enseignant {
 		this.role = role;
 	}
 
-
 	public Status getIsValide() {
 		return isValide;
 	}
@@ -128,11 +132,11 @@ public class Enseignant {
 		this.isValide = isValide;
 	}
 
-	public Byte[] getCvData() {
+	public byte[] getCvData() {
 		return cvData;
 	}
 
-	public void setCvData(Byte[] cvData) {
+	public void setCvData(byte[] cvData) {
 		this.cvData = cvData;
 	}
 
@@ -151,5 +155,29 @@ public class Enseignant {
 	public void setCvContentType(String cvContentType) {
 		this.cvContentType = cvContentType;
 	}
-   
+
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
+	}
+
+	public String getPhotoName() {
+		return photoName;
+	}
+
+	public void setPhotoName(String photoName) {
+		this.photoName = photoName;
+	}
+
+	public byte[] getPhotoData() {
+		return photoData;
+	}
+
+	public void setPhotoData(byte[] photoData) {
+		this.photoData = photoData;
+	}
+
 }

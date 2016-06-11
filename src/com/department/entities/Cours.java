@@ -19,11 +19,15 @@ public class Cours extends CommonWithFile{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	public Cours(Long id, String intitule, Module module, Enseignant enseignant) {
 		super(id, intitule);
 		this.module = module;
 		this.enseignant = enseignant;
 	}
+	
+	
 	public Cours(Long id, String intitule, Module module, Enseignant enseignant, byte[] file_data, String file_name,
 			String file_contentType) {
 		super(id, intitule, file_data, file_name, file_contentType);

@@ -16,7 +16,7 @@ import com.department.utils._TableNames;
 public class BonusParticipant {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 	@ManyToOne(fetch = FetchType.LAZY)
 	private ChargeHoraire chargeHoraire;
@@ -25,6 +25,7 @@ public class BonusParticipant {
 	private Integer nbSection;
 	private String message;
 	private Status status;
+	private Integer volumeHoraire;
 
 	public BonusParticipant() {
 		super();
@@ -88,5 +89,13 @@ public class BonusParticipant {
 
 	public void setBonus(Bonus bonus) {
 		this.bonus = bonus;
+	}
+
+	public Integer getVolumeHoraire() {
+		return volumeHoraire;
+	}
+
+	public void setVolumeHoraire(Integer volumeHoraire) {
+		this.volumeHoraire = volumeHoraire;
 	}
 }

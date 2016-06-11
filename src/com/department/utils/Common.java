@@ -9,7 +9,7 @@ import javax.persistence.MappedSuperclass;
 public abstract class Common {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 	protected String intitule;
 		

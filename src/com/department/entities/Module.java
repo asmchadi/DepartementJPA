@@ -27,6 +27,18 @@ public class Module extends Common {
 		super();
 	}
 	
+	public Module(String intitule, Filiere filiere,
+			Enseignant responsable, Integer semestre, Integer vhCour,
+			Integer vhTP, Integer vhTD) {
+		
+		this.intitule = intitule;
+		this.filliere = filiere;
+		this.responsable = responsable;
+		this.semestre = semestre;
+		this.vhCour = vhCour;
+		this.vhTP = vhTP;
+		this.vhTD = vhTD;
+	}
 	
 
 	public Module(Long id, String intitule, Filiere filliere,
@@ -90,5 +102,14 @@ public class Module extends Common {
 	public void setResponsable(Enseignant responssable) {
 		this.responsable = responssable;
 	}
+	
+	public Integer getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+
 
 }
