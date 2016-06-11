@@ -20,19 +20,21 @@ import com.department.utils._TableNames;
 public class ChargeModule {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
-	@ManyToOne
-	private Module module;
+	String module;
+	String filiere;
+	String semestre;
 	private Integer vhCour;
 	private Integer nbCour;
 	private Integer vhTP;
 	private Integer nbTP;
-	private Integer vhTD;
+	private Integer vhTD; 
 	private Integer nbTD;
 	private Status status;
 	private String message;
+	
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private ChargeHoraire chargeHoraire;
@@ -44,7 +46,7 @@ public class ChargeModule {
 		return chargeHoraire;
 	}
 
-	public ChargeModule(ChargeHoraire chargeHoraire, Module module,
+	public ChargeModule(ChargeHoraire chargeHoraire, String module,
 			Integer vhCour, Integer nbCour, Integer vhTP, Integer nbTP,
 			Integer vhTD, Integer nbTD, Status status) {
 		super();
@@ -113,13 +115,13 @@ public class ChargeModule {
 
 
 
-	public Module getModule() {
+	public String getModule() {
 		return module;
 	}
 
 
 
-	public void setModule(Module module) {
+	public void setModule(String module) {
 		this.module = module;
 	}
 
@@ -147,6 +149,21 @@ public class ChargeModule {
 
 	public void setVhTD(Integer vhTD) {
 		this.vhTD = vhTD;
+	}
+	public String getFiliere() {
+		return filiere;
+	}
+
+	public void setFiliere(String filiere) {
+		this.filiere = filiere;
+	}
+
+	public String getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(String semestre) {
+		this.semestre = semestre;
 	}
  
 }
