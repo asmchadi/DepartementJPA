@@ -21,7 +21,7 @@ public class ChargeModule {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Long id;
+	private Long id;
 	
 	String module;
 	String filiere;
