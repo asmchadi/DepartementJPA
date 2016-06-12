@@ -12,13 +12,13 @@ public class AnneeUniversitaire {
 	
 	@Id
 	protected String intitule;
-	private boolean isCurrent;
-	
-	public boolean isCurrent() {
+	private Boolean isCurrent;
+
+	public Boolean getIsCurrent() {
 		return isCurrent;
 	}
 
-	public void setCurrent(boolean isCurrent) {
+	public void setIsCurrent(Boolean isCurrent) {
 		this.isCurrent = isCurrent;
 	}
 
@@ -36,6 +36,12 @@ public class AnneeUniversitaire {
 
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.intitule;
 	}
 
 }
