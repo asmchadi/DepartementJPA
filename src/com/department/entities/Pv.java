@@ -7,35 +7,35 @@ import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import com.department.utils.CommonWithFile;
+import com.department.utils.Common;
+import com.department.utils.Status;
 import com.department.utils._TableNames;
 
 @Entity
 @Table(name = _TableNames.Pv)
-public class Pv extends CommonWithFile{
+public class Pv extends Common{
 
 	@Lob
 	@Column
 	private String text;
 	private Date date;
-	private Boolean isValide=false;
+	private Status status;
+	private Integer period;
+	public Integer getPeriod() {
+		return period;
+	}
+	public void setPeriod(Integer period) {
+		this.period = period;
+	}
 	public Pv() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Pv(Long id, String intitule, String text, Date date,
-			Boolean isValide) {
+			Status status) {
 		super(id, intitule);
 		this.text = text;
 		this.date = date;
-		this.isValide = isValide;
-	}
-	public Pv(Long id, String intitule, String text, Date date, Boolean isValide, byte[] file_data, String file_name,
-			String file_contentType) {
-		super(id, intitule, file_data, file_name, file_contentType);
-		this.text = text;
-		this.date = date;
-		this.isValide = isValide;
+		this.status = status;
 	}
 	public String getText() {
 		return text;
@@ -49,11 +49,11 @@ public class Pv extends CommonWithFile{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Boolean getIsValide() {
-		return isValide;
+	public Status getStatus() {
+		return status;
 	}
-	public void setIsValide(Boolean isValide) {
-		this.isValide = isValide;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 	
 	
